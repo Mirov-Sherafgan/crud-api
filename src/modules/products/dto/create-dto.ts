@@ -15,6 +15,4 @@ export class createProductDTO {
 
   @ApiProperty({ default: 0, description: "Product price", example: "10" })
   price: number;
-
-
 }

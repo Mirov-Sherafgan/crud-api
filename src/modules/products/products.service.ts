@@ -9,8 +9,7 @@ export class ProductsService {
   constructor(
     @InjectRepository(Products)
     private readonly productService: Repository<Products>,
-  ) {
-  }
+  ) {}
 
   getAll() {
     return this.productService.find();

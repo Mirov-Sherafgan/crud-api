@@ -3,7 +3,7 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { ConfigModule } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { ProductsModule } from './modules/products/products.module';
+import { ProductsModule } from "./modules/products/products.module";
 
 @Module({
   imports: [
@@ -27,5 +27,4 @@ import { ProductsModule } from './modules/products/products.module';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
-}
+export class AppModule {}

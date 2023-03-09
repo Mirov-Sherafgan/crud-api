@@ -11,5 +11,4 @@ export class Products extends BaseUnit {
 
   @Column({ default: "", length: 512 })
   description?: string;
-
 }

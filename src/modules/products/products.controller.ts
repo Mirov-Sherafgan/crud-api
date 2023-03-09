@@ -1,4 +1,14 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Post,
+  Put,
+} from "@nestjs/common";
 import { ProductsService } from "./products.service";
 import { Products } from "./entities/product-entity";
 import { ApiResponse, ApiTags } from "@nestjs/swagger";
@@ -8,8 +18,7 @@ import { updateProductDTO } from "./dto/update-dto";
 @ApiTags("Products")
 @Controller("products")
 export class ProductsController {
-  constructor(private readonly productService: ProductsService) {
-  }
+  constructor(private readonly productService: ProductsService) {}
 
   @Get()
   getAll(): Promise<Products[]> {
@@ -17,7 +26,10 @@ export class ProductsController {
   }
 
   @Post()
-  @ApiResponse({ status: 201, description: 'The product has been successfully created.'})
+  @ApiResponse({
+    status: 201,
+    description: "The product has been successfully created.",
+  })
   @HttpCode(HttpStatus.CREATED)
   create(@Body() createProductDTO: createProductDTO) {
     return this.productService.createProduct(createProductDTO);
@@ -38,5 +50,4 @@ export class ProductsController {
   delete(@Param("id") id: string) {
     return this.productService.deleteProduct(id);
   }
-
 }

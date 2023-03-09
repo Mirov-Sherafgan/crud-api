@@ -13,7 +13,10 @@ export class updateProductDTO {
   })
   description: string;
 
-  @ApiProperty({ default: 0, description: "updated product price", example: "25" })
+  @ApiProperty({
+    default: 0,
+    description: "updated product price",
+    example: "25",
+  })
   price: number;
-
 }
