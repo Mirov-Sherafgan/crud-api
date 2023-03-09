@@ -2,7 +2,7 @@ import { Injectable } from "@nestjs/common";
 
 @Injectable()
 export class AppService {
-  response(): string{
+  response(): string {
     return "Backend CRUD API";
   }
 }
